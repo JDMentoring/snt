@@ -1,8 +1,7 @@
-package dao;
+package socialnetwork.dao.basic;
 
 import org.apache.log4j.Logger;
 
-import java.io.Serializable;
 import java.sql.*;
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package dao.mysql;
+package socialnetwork.dao.mysql;
 
-import dao.AbstractDao;
-import dao.DaoException;
-import dao.beans.User;
+import socialnetwork.dao.basic.AbstractDao;
+import socialnetwork.dao.basic.DaoException;
+import socialnetwork.beans.User;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;

@@ -1,6 +1,5 @@
-package dao;
+package socialnetwork.dao.basic;
 
-import java.io.Serializable;
 import java.util.List;
 
 public interface GenDao<P extends Identifiable<PK>,PK extends Integer> {

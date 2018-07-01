@@ -1,9 +1,9 @@
-package dao.mysql;
+package socialnetwork.dao.mysql;
 
-import dao.DaoException;
-import dao.DaoFactory;
-import dao.GenDao;
-import dao.beans.User;
+import socialnetwork.dao.basic.DaoException;
+import socialnetwork.dao.basic.DaoFactory;
+import socialnetwork.dao.basic.GenDao;
+import socialnetwork.beans.User;
 
 import java.util.List;
 

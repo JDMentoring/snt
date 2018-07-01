@@ -1,4 +1,4 @@
-package dao.beans;
+package socialnetwork.beans;
 
 import java.time.LocalDate;
 

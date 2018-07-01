@@ -1,4 +1,4 @@
-package dao;
+package socialnetwork.dao.basic;
 
 public class DaoException extends Exception{
     public DaoException() {

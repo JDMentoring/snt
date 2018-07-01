@@ -1,12 +1,10 @@
-package bigpic;
+package bigpic.bean;
 
 import javax.servlet.ServletContext;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoAlbum {
-    //TODO CHANGE ARRAY LIST TO -> HASHMAP
-
     public static String ATTRIBUTE_NAME = "Photo_Album";
     private List<byte[]> photoDataList = new ArrayList<>();
     private List<String> names = new ArrayList<>();
@@ -40,6 +38,4 @@ public class PhotoAlbum {
         photoDataList.remove(index);
         names.remove(index);
     }
-
-
 }

@@ -1,6 +1,6 @@
-package servlets_big_pic;
+package bigpic.servlets;
 
-import bigpic.PhotoAlbum;
+import bigpic.bean.PhotoAlbum;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ import java.io.*;
 
 @WebServlet(name = "DisplayAlbumServlet", urlPatterns = {"/DisplayAlbumServlet"})
 //https://docs.oracle.com/javaee/7/tutorial/servlets011.htm
-@MultipartConfig() //WHAT THIS?
+@MultipartConfig()
 
 
 public class DisplayAlbumServlet extends HttpServlet {
@@ -44,7 +44,6 @@ public class DisplayAlbumServlet extends HttpServlet {
 
     }
 
-    //TODO WHAT IS PART?
     private void uploadPhoto(HttpServletRequest req, PhotoAlbum pa) throws ServletException, IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         String fileName = null;
@@ -107,7 +106,6 @@ public class DisplayAlbumServlet extends HttpServlet {
                 "        </div>\n" +
                 "    </section>");
 
-        //CARD HERE!!!
         writer.write("<div class=\"album py-5\">\n" +
                 "        <div class=\"container\">\n" +
                 "            <div class=\"row\">");

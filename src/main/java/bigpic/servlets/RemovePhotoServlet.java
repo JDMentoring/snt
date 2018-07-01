@@ -1,6 +1,6 @@
-package servlets_big_pic;
+package bigpic.servlets;
 
-import bigpic.PhotoAlbum;
+import bigpic.bean.PhotoAlbum;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +17,7 @@ public class RemovePhotoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int index = Integer.parseInt(req.getParameter("photo"));
         PhotoAlbum pa = PhotoAlbum.getPhotoAlbum(req.getServletContext());
+
         pa.removePhoto(index);
         RequestDispatcher rd = req.getRequestDispatcher("DisplayAlbumServlet");
         rd.forward(req, resp);

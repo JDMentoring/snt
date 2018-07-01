@@ -1,6 +1,6 @@
-package dao.beans;
+package socialnetwork.beans;
 
-import dao.Identifiable;
+import socialnetwork.dao.basic.Identifiable;
 
 import java.time.LocalDate;
 

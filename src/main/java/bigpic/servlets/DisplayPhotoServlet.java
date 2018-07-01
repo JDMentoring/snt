@@ -1,6 +1,6 @@
-package servlets_big_pic;
+package bigpic.servlets;
 
-import bigpic.PhotoAlbum;
+import bigpic.bean.PhotoAlbum;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
