@@ -1,13 +1,18 @@
 package bigpic.bean;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoAlbum {
     public static String ATTRIBUTE_NAME = "Photo_Album";
+
     private List<byte[]> photoDataList = new ArrayList<>();
     private List<String> names = new ArrayList<>();
+
+    public PhotoAlbum() {
+    }
 
     public static PhotoAlbum getPhotoAlbum(ServletContext context) {
         if (context.getAttribute(ATTRIBUTE_NAME) == null) {
@@ -16,6 +21,16 @@ public class PhotoAlbum {
         }
         return (PhotoAlbum) context.getAttribute(ATTRIBUTE_NAME);
     }
+
+
+    public static PhotoAlbum getPhotoAlbumS(HttpSession session) {
+        return (PhotoAlbum) session.getAttribute(ATTRIBUTE_NAME);
+    }
+
+    public void setSession(HttpSession session) {
+        session.setAttribute(ATTRIBUTE_NAME, this);
+    }
+
 
     public synchronized void addPhoto(String name, byte[] bytes) {
         this.photoDataList.add(bytes);

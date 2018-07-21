@@ -31,6 +31,8 @@ public class DisplayAlbumServlet extends HttpServlet {
     protected void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = req.getServletContext();
         PhotoAlbum pa = PhotoAlbum.getPhotoAlbum(context);
+
+       //TODO Read about getContentType
         if (req.getContentType() != null &&
                 req.getContentType().startsWith("multipart/form-data")) {
             this.uploadPhoto(req, pa);
@@ -44,10 +46,18 @@ public class DisplayAlbumServlet extends HttpServlet {
 
     }
 
+
+    /**
+     * DATA ROAD MAP
+     * FROM http request => PART => ByteArrayOutputStream TO => Photo Album
+     */
     private void uploadPhoto(HttpServletRequest req, PhotoAlbum pa) throws ServletException, IOException {
+
+
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         String fileName = null;
 
+        //TODO WHAT IS PART?
         for (Part p : req.getParts()) {
             this.copyBytes(p.getInputStream(), baos);
             fileName = p.getSubmittedFileName();

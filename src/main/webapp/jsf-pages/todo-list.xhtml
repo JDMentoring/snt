@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>#{todoList.title}</title>
+</h:head>
+
+<h:body>
+<div align="center">
+    <h:form>
+        <label style="font-weight: bold">ToDo List</label>
+        <br/>
+
+        <label>List title :</label>
+        <h:inputText value="#{todoList.title}"/>
+        <br/>
+
+        <label>Select picture :</label>
+        <h:selectOneMenu value="#{todoList.imageUrl}">
+            <f:selectItem itemValue="pic1.jpg" itemLabel="somePic1"/>
+            <f:selectItem itemValue="pic2.jpg" itemLabel="somePic1"/>
+        </h:selectOneMenu>
+        <br/>
+
+        <label>Remind you :</label>
+        <h:selectBooleanCheckbox value="#{todoList.remind}"/>
+        <br/>
+
+        <h:commandButton value="Submit picture" action="todo-list.xhtml"/>
+        <h:commandButton value="Reset to default" action="#{todoList.reset()}"/>
+    </h:form>
+    <br/>
+    <br/>
+    <h1>ToDo List Summary</h1>
+    <h:outputText value="#{todoList.information}"/>
+    <h:dataTable value="#{todoList.items}" var="item">
+        <h:column>#{item.subscription}</h:column>
+        <h:column>#{item.priority}</h:column>
+    </h:dataTable>
+    <h:graphicImage value="#{todoList.imageUrl}" width="500" height="500"/>
+</div>
+
+
+</h:body>
+
+
+</html>
